@@ -86,7 +86,7 @@ public:
 
         // SÉCURITÉ ANTI-CORRUPTION : Si l'IA n'a pas fini de lire ce slot, on attend.
         while (slot->in_use.load(std::memory_order_acquire)) {
-            _mm_pause(); // Attend poliment quelques nanosecondes (réduit la chauffe CPU)
+            _mm_pause(); // 
         }
 
         return slot;
